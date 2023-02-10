@@ -1,0 +1,34 @@
+.DropDownSearchElement {
+  position: relative;
+  padding: 6px 0 8px 9px;
+  border-top: 1px solid var(--gray-color);
+  height: 49px !important;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.DropDownSearchElement__header {
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+}
+
+.DropDownSearchElement__subheader {
+  font-size: 12px;
+  color: var(--gray-dark-color);
+  margin: 0;
+  padding: 0;
+  padding-top: 2px;
+}
+
+.DropDownSearchElement:first-child {
+  border-top: none;
+}
+
+.DropDownSearchElement:hover,
+.DropDownSearchElement:active {
+  background-color: var(--white_alpha8);
+  cursor: pointer;
+}

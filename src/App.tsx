@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC, useState, useEffect } from "react";
 
-function App() {
+import { DropDown } from "./components/ui";
+
+import "./App.css";
+
+type TItems = {
+  id: string;
+  parent_id: null;
+  name: string;
+  areas?: Array<any>;
+};
+
+export const App: FC = () => {
+  const [items, setItems] = useState<TItems | undefined>();
+
+  useEffect(() => {
+    if (!items) {
+      fetch("https://api.hh.ru/areas")
+        .then((response) => response.json())
+        .then((result) => setItems(result["0"].areas["6"]))
+        .catch((error) => console.log(error));
+    }
+  }, [items, setItems]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {items && (
+        <DropDown
+          placeholder="Выберите город..."
+          items={items.areas?.map((item) => {
+            return {
+              key: `cities-${item.id}`,
+              label: item.name,
+              value: "Города",
+            };
+          })}
+        />
+      )}
+
+      <DropDown
+        placeholder="Выберите тестовый вариант..."
+        items={Array.from(Array(10), (_, index) => {
+          return {
+            key: `test-${index}`,
+            label: `label-${index}`,
+            value: "",
+          };
+        })}
+      />
     </div>
   );
-}
-
-export default App;
+};
