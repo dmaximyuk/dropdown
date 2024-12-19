@@ -59,7 +59,6 @@ This project utilizes:
 - **React.js** : For building the user interface.
 - **TypeScript**: To ensure type safety and better developer experience.
 - **CSS Modules**: A CSS Modules for structured and maintainable styles.
-- **Vite**: For a fast and efficient development build process.
 
 ---
 
