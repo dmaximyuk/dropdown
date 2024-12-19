@@ -1,30 +1,31 @@
 :root {
   color-scheme: dark;
 
-  --accent-color: #e1e3e6;
-  --black-color: #222222;
-  --dark-color: #292929;
-  --gray-color: #424242;
+  --accent-color   : #e1e3e6;
+  --black-color    : #222222;
+  --dark-color     : #292929;
+  --gray-color     : #424242;
   --gray-dark-color: #828282;
-  --white_alpha8: rgba(255, 255, 255, 0.08);
+  --white_alpha8   : rgba(255, 255, 255, 0.08);
 
   --default-background-color: #222222;
 
-  --default-border-color: var(--gray-color);
-  --default-border-width: 1px;
+  --default-border-color : var(--gray-color);
+  --default-border-width : 1px;
   --default-border-radius: 4px;
-  --default-font-color: var(--accent-color);
+  --default-font-color   : var(--accent-color);
 }
 
 body {
-  margin: 0;
+  margin          : 0;
   background-color: var(--default-background-color);
-  min-height: 800px;
+  min-height      : 800px;
+  font-family     : sans-serif;
 }
 
 .App {
-  width: 500px;
-  margin: auto;
+  width      : 500px;
+  margin     : auto;
   padding-top: 200px;
 }
 
@@ -37,5 +38,5 @@ h6,
 p,
 span {
   font-family: var(--default-font-family);
-  color: var(--default-font-color);
+  color      : var(--default-font-color);
 }
